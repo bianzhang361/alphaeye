@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import {Monitor} from "../../../bean/monitor";
-import {MonitorService} from "../../../service/monitor.service";
+import { Monitor } from "../../../bean/monitor";
+import { Result } from "../../../bean/result";
+import { MonitorService } from "../../../service/monitor.service";
 
 @Component({
   selector: 'app-monitors',
@@ -10,7 +11,7 @@ import {MonitorService} from "../../../service/monitor.service";
 })
 export class MonitorsComponent implements OnInit {
 
-  monitors: Monitor[];
+  monitors: Object;
 
   constructor(private monitorService: MonitorService) { }
 
@@ -19,7 +20,11 @@ export class MonitorsComponent implements OnInit {
   }
 
   getMonitors(): void {
-    this.monitors = this.monitorService.getMonitors();
+    //this.monitors = this.monitorService.getMonitors();
+    this.monitorService.getMonitors()
+      .subscribe(result => {
+        console.log(result.data);
+        this.monitors = result.data});
   }
 
 }

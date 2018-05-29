@@ -1,16 +1,24 @@
 import { Injectable } from '@angular/core';
-import {Monitor} from "../bean/monitor";
-import {MONITORS} from "../mock/mock-monitors";
+import { Observable, of } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Monitor } from "../bean/monitor";
+import { Result } from "../bean/result";
+import { MONITORS } from "../mock/mock-monitors";
+import * as Constants from "../common/constants";
 
 @Injectable({
   providedIn: 'root'
 })
 export class MonitorService {
 
-  constructor() { }
+  //private monitorsUrl = 'http://192.168.100.114:8080/MonitorData';
+  private monitorsUrl = Constants.BLACKMAN_URL + '/MonitorData';
 
-  getMonitors(): Monitor[] {
-    return MONITORS;
+  constructor(private http: HttpClient) { }
+
+  getMonitors(): Observable<Result> {
+    // return of(MONITORS);
+    return this.http.get<Result>(this.monitorsUrl);
   }
 
 }
