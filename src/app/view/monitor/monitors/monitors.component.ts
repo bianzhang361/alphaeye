@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MONITORS } from '../../../mock/mock-monitors';
+import {Monitor} from "../../../bean/monitor";
+import {MonitorService} from "../../../service/monitor.service";
 
 @Component({
   selector: 'app-monitors',
@@ -9,11 +10,16 @@ import { MONITORS } from '../../../mock/mock-monitors';
 })
 export class MonitorsComponent implements OnInit {
 
-  monitors = MONITORS;
+  monitors: Monitor[];
 
-  constructor() { }
+  constructor(private monitorService: MonitorService) { }
 
   ngOnInit() {
+    this.getMonitors();
+  }
+
+  getMonitors(): void {
+    this.monitors = this.monitorService.getMonitors();
   }
 
 }
