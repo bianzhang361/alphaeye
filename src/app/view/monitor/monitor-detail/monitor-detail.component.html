@@ -1,0 +1,44 @@
+<div class="mdui-container">
+  <p>
+    monitor-detail
+  </p>
+  <div class="mdui-row">
+    <div class="mdui-col-sm-12 mdui-col-md-8">
+      <div class="mdui-card">
+        <div class="mdui-card-primary">
+          <div class="mdui-card-primary-title">Monitor Detail</div>
+          <div class="mdui-card-primary-subtitle">just do it</div>
+        </div>
+        <div class="mdui-card-content">
+          <form>
+            <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-has-bottom mdui-textfield-not-empty">
+              <label class="mdui-textfield-label">#</label>
+              <input class="mdui-textfield-input" type="text" required value="{{ monitor.id }}" [disabled]="isReadonly"/>
+              <div class="mdui-textfield-error">用户名不能为空</div>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-has-bottom mdui-textfield-not-empty">
+              <label class="mdui-textfield-label">Number</label>
+              <input class="mdui-textfield-input" type="text" required value="{{ monitor.number }}" [disabled]="isReadonly"/>
+              <div class="mdui-textfield-error">Number不能为空</div>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-has-bottom mdui-textfield-not-empty">
+              <label class="mdui-textfield-label">Ip</label>
+              <input class="mdui-textfield-input" type="text" required value="{{ monitor.ip }}" [disabled]="isReadonly"/>
+              <div class="mdui-textfield-error">Ip不能为空</div>
+            </div>
+            <div class="mdui-textfield mdui-textfield-floating-label mdui-textfield-has-bottom mdui-textfield-not-empty">
+              <label class="mdui-textfield-label">Address</label>
+              <input class="mdui-textfield-input" type="text" required value="{{ monitor.address }}" [disabled]="isReadonly"/>
+              <div class="mdui-textfield-error">Address不能为空</div>
+            </div>
+          </form>
+        </div>
+        <div class="mdui-card-actions">
+          <button class="mdui-btn mdui-ripple mdui-hidden" [class.mdui-hidden]="editBtn" (click)="edit();">编辑</button>
+          <button class="mdui-btn mdui-ripple mdui-hidden" [class.mdui-hidden]="saveBtn" (click)="save();">保存</button>
+          <button class="mdui-btn mdui-ripple" (click)="goBack();">返回</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

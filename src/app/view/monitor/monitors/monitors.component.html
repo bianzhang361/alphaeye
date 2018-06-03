@@ -15,14 +15,17 @@
       </thead>
       <tbody>
       <tr *ngFor="let monitor of monitors">
-        <td>{{ monitor['id'] }}</td>
+        <!--<td>{{ monitor['id'] }}</td>
         <td>{{ monitor['number'] }}</td>
         <td>{{ monitor['ip'] }}</td>
-        <td>{{ monitor['address'] }}</td>
+        <td>{{ monitor['address'] }}</td>-->
+        <td>{{ monitor.id }}</td>
+        <td>{{ monitor.number }}</td>
+        <td>{{ monitor.ip }}</td>
+        <td>{{ monitor.address }}</td>
         <td>
           <div class="mdui-btn-group">
-            <button type="button" class="mdui-btn mdui-btn-raised mdui-ripple mdui-btn-dense mdui-color-theme-accent">查看</button>
-            <button type="button" class="mdui-btn mdui-btn-raised mdui-ripple mdui-btn-dense mdui-color-theme-accent">编辑</button>
+            <button type="button" class="mdui-btn mdui-btn-raised mdui-ripple mdui-btn-dense mdui-color-theme-accent" routerLink="/monitor-detail/{{ monitor.id }}">查看</button>
             <button type="button" class="mdui-btn mdui-btn-raised mdui-ripple mdui-btn-dense mdui-color-theme-accent">删除</button>
           </div>
         </td>
