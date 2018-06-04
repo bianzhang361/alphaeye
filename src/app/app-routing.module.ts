@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: 'monitors', component: MonitorsComponent },
   { path: 'monitor-detail/:id', component: MonitorDetailComponent },
   { path: 'music/classification', component: ClassificationComponent },
-  { path: 'music/music-list', component: MusicListComponent }
+  { path: 'music/musicList', component: MusicListComponent }
 ];
 
 @NgModule({
