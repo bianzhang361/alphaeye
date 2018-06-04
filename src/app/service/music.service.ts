@@ -45,7 +45,7 @@ export class MusicService {
     const url =  this.musicUrl + this.callBackUrl;
     // return this.http.get<MusicResponse>(url).subscribe(data => { console.log('data: ' + data); });
     // return this.http.jsonp<MusicResponse>(this.musicUrl, this.callBackUrl);
-    return this.http.get<MusicResponse>(this.musicUrl, httpParams);
+    return this.http.get<MusicResponse>(this.musicUrl, httpOptions);
   }
 
 }

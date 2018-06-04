@@ -9,8 +9,8 @@ const routes: Routes = [
   { path: '', redirectTo: '/alphaeye', pathMatch: 'full' },
   { path: 'monitors', component: MonitorsComponent },
   { path: 'monitor-detail/:id', component: MonitorDetailComponent },
-  { path: 'classification', component: ClassificationComponent },
-  { path: 'music-list', component: MusicListComponent }
+  { path: 'music/classification', component: ClassificationComponent },
+  { path: 'music/music-list', component: MusicListComponent }
 ];
 
 @NgModule({

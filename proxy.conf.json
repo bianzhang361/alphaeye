@@ -1,0 +1,7 @@
+{
+  "/music": {
+    "target": "http://h.xiami.com",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
