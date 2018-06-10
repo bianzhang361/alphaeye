@@ -9,8 +9,15 @@ const httpOptions = {
   headers: new HttpHeaders().set('Referer', 'http://h.xiami.com/')
 };
 const httpParams = {
-  params: new HttpParams().set('Referer', 'http://h.xiami.com/')
-}
+  params: new HttpParams()
+    .set('type', 'ttpod')
+    .set('format', 'json')
+    .set('method', 'alibaba.xiami.api.rank.songs.get')
+    .set('v', '2.0')
+    .set('app_key', '1012129701')
+    .set('timestamp', new Date().valueOf().toString())
+    .set('sign', 'DD15F4403262E18EE83B905E74443E2D')
+};
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +44,11 @@ export class MusicService {
     private http: HttpClient,
     private jsonp: HttpClientJsonpModule
   ) { }
+
+  getClassification(): Observable<object> {
+    const url = 'http://gw.api.tbsandbox.com/router/rest';
+    return this.http.get(url, httpParams);
+  }
 
   getMusicList(): Observable<MusicResponse> {
     const callback = 'callback=' + '__ng_jsonp__.__req' + MusicService.times + '.finished';
